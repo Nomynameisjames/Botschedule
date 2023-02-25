@@ -20,8 +20,7 @@ class Checker:
 
     def Review(self, my_id):
         """
-            class method modifies the Create_Schedule class instance
-            based on the provided
+            class method modifies the class instance based on the provided
             parameters
         """
         allTask = self.schedule.View()

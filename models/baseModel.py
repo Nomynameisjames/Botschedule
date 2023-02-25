@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 import models
+import json
 from datetime import datetime
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
@@ -29,6 +30,27 @@ class User(Base):
         return f"Date: {self.Days} Course: {self.Course} Topic: {self.Topic}\
                 Average: {self.Average} Reminder: {self.Reminder}\
                 Created: {self.Created_at}"
+
+    def __is_serializable(self, obj_v):
+        """
+            private: checks if object is serializable
+        """
+        try:
+            obj_to_str = json.dumps(obj_v)
+            return obj_to_str is not None and isinstance(obj_to_str, str)
+        except:
+            return False
+ 
+    def to_json(self):
+        try:
+            bm_dict = {
+                    k: v if self.__is_serializable(v) else str(v)
+                    for k, v in self.__dict__.items()
+                    }
+            bm_dict.pop('_sa_instance_state', None)
+            return(bm_dict)
+        except:
+            return False
 
 
 
