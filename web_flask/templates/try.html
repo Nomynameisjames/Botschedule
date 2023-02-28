@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>API TRYING</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://code.iconify.design/iconify-icon/1.0.4/iconify-icon.min.js"></script>
+    <script type="text/javascript">
+        function chatlog() {
+
+    // make the AJAX call to the OpenAI API
+        $.ajax({
+            url: 'http://127.0.0.1:5001/api/v1/tasks/', // Replace with your API endpoint
+            type: 'GET',
+            dataType: 'json',
+            success: function(data) {
+        // Handle successful response here
+            var msg = JSON.stringify(data);
+            console.log(msg);
+            $('#container').html(msg);
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+        // Handle error response here
+            console.log('Error:', textStatus, errorThrown);
+            }
+        });
+        };
+
+
+        function getlog () {
+            var inputMsg = $("#text-area").val();
+            var postData = { "text" : inputMsg };
+            $("#text-area").val("");
+
+            $.ajax({
+                url: 'http://127.0.0.1:5001/api/v1/help/',
+                type: 'POST',
+                headers: {
+                        "Content-Type": "application/json",
+                            },
+                data: JSON.stringify(postData),
+                success: function(response) {
+                    var values = Object.values(response);
+                    console.log(values);
+                    response = {};
+                   // var outputMsg = response.output;
+                    // var msg = JSON.stringify(outputMsg);
+                   // console.log(msg);
+                   // console.log(outputMsg);
+                   // var prevMsg = $('#container').text();
+                   // $('#container').text(prevMsg + "<br>" + msg);
+                },
+            error: function(jqXHR, textStatus, errorThrown) {
+                console.log('Error', textStatus, errorThrown);
+            }
+            })
+        };// Replace with your API endpoint
+
+    //        $("#my-button").click(function() {
+      //          var msg = $("#text-area").val();
+        //        console.log(msg)
+          //      $('#container').text(msg);
+            //    $("#text-area").val("");
+       // };
+        $(document).ready(function() {
+			$('#delete-button').click(function() {
+				var id = prompt("Enter item ID:");
+				if (id != null) {
+					$(this).addclass('confirm').text('Confirm').unbind('click').click(function() {
+						$.ajax({
+							url: 'http://127.0.0.1:5001/api/v1/tasks/' + id,
+							type: 'DELETE',
+							success: function(data) {
+								alert('Item deleted successfully!');
+								$('#delete-button').removeClass('confirm').text('Delete Item').click(function() {
+									location.reload();
+								});
+							},
+							error: function(xhr, status, error) {
+								alert('Error deleting item!');
+								$('#delete-button').removeClass('confirm').text('Delete Item').click(function() {
+									location.reload();
+								});
+							}
+						});
+					});
+					$(this).after('<button id="cancel-button" class="cancel"><iconify-icon icon="material-symbols:cancel-presentation-outline-rounded"></iconify-icon></button>');
+					$('#cancel-button').click(function() {
+						$('#delete-button').removeClass('confirm cancel').text('Delete Item').click(function() {
+							location.reload();
+						});
+						$(this).remove();
+					});
+				}
+			});
+		});
+</script>
+<style>
+    body {
+        background-color: #f2f2f2;
+        margin: 0;
+    }
+        #delete-button {
+			background-color: red;
+			color: white;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+    .confirm, .cancel {
+			display: none;
+			padding: 10px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		#confirm {
+			background-color: green;
+			color: white;
+		}
+		#cancel {
+			background-color: red;
+			color: white;
+		}
+    #text-area {
+        width: 500px;
+        height: 20px
+        resize: none;
+        border-radius: 10px;
+        background-color: #f2f2f2;
+        border: 1px solid black;
+        justify-content: center;
+    
+
+    }
+    #container {
+        width: 1024px;
+        height: 50%;
+        min-height: 500px;
+        background-color: white;
+        margin-top: 20px;
+        margin: 0 auto;
+        border: 1px solid black;
+    }
+    #control {
+        width: 1024px;
+        margin: 0px auto;
+    }
+
+</style>
+</head>
+    <body>
+        <div id = "container">
+
+        </div>
+
+                <textarea id="text-area" placeholder="enter text here..."></textarea>
+                <button id="delete-button">Delete Item</button>
+    </body>
+</html>

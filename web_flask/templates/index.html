@@ -152,7 +152,7 @@
                                 <div class="card bg-warning text-white mb-4">
                                     <div class="card-body">Create new task</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" id="add-new" href="{{ url_for('Main.new') }}">View Details</a>
+                                        <a class="small text-white stretched-link" id="add-new" href="#">View Details</a>
                                         <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                     </div>
                                 </div>
@@ -197,11 +197,20 @@
                             </div>
                         </div>
                         <div class="card mb-4">
-                            <div class="card-header">
+                            <div class="card-header" id="table-dash">
                                 <i class="fas fa-table me-1" id="tab"></i>
                                 Monthly Schedules
                                 <!--  <button id="add-row" href="{{ url_for('Main.new') }}">New</button>  -->
-                            </div>
+
+                                    <button type="button" title="Delete Task" class="remove-bin" id="my-btn"><iconify-icon icon="fluent:delete-32-filled" height="27" width="35"></iconify-icon></button>
+                                    <button type="button" title="set alarm" class="set-alarm" id="my-alarm"><iconify-icon icon="material-symbols:alarm-outline" height="27" width="35"></iconify-icon></button>
+                        	        <button type="button" title="Update Task" class="edit-btn"><iconify-icon icon="material-symbols:edit" height="27" width="35"></iconify-icon></button>
+                                    <button type="button" title="create new Task" class="create-btn">
+                                        <iconify-icon icon="material-symbols:create-new-folder-sharp" height="27" width="35"></iconify-icon>
+					                    <a class="small text-white stretched-link" id="add-new" href="{{ url_for('Main.new') }}"></a>
+                                    </button>
+
+			                </div>
                             <div class="card-body" id= "table-back">
                                 <table id="datatablesSimple">
                                     <thead>
@@ -232,18 +241,17 @@
                                     {% block table %}    
                                         {% for key, value in data.items() %} 
                                          <tr>
-                                                <td> {{ key }} </td>
+                                                <td id="my-key"> {{ key }} </td>
                                                 <td> {{ data[key]["Date"] }} </td>
                                                 <td> {{ data[key]["Course"] }} </td>
                                                 <td> {{ data[key]["Topic"] }} </td>
-                                                <td> {{ data[key]["Target"] }} </td>
-                                                <td> {{ data[key]["Average"] }} </td>
+                                                <td class="Dont"> {{ data[key]["Target"] }} </td>
+                                                <td class="Dont"> {{ data[key]["Average"] }} </td>
                                                 <td> {{ data[key]["Reminder"] }} </td>
-                                                <td> {{ data[key]["Created"] }} </td>
-                                             
+                                                <td class="Dont"> {{ data[key]["Created"] }} </td>
+                                
                                         </tr>
                                         {% endfor %}
-  					<button class="remove-bin" data-id="123"><iconify-icon icon="fluent:delete-32-filled" height="25" width="25"></iconify-icon></button>     
                                     </tbody> 
                                  </table>
                                  {% endblock %}
