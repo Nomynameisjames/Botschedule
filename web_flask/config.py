@@ -10,9 +10,9 @@ class Config:
         ['true', 'on', '1']
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
-    FLASKY_MAIL_SENDER = 'Flasky Admin <flasky@example.com>'
-    FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
+    BOT_MAIL_SUBJECT_PREFIX = '[Botschedule]'
+    BOT_MAIL_SENDER = 'Botschedule Admin <flasky@example.com>'
+    BOT_ADMIN = os.environ.get('BOT_ADMIN')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     @staticmethod
@@ -21,7 +21,12 @@ class Config:
 
 
 
-
+"""
+    The following code is used to set the database URI for the application.
+    The URI is set based on the environment variable DATABASE_URL. If the
+    environment variable is not set, then the URI is set to a local SQLite
+    database.
+"""
 
 class DevelopmentConfig(Config): 
     DEBUG = True
