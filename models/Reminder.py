@@ -11,10 +11,10 @@ now = current_date_time.strftime("%Y-%m-%d")
 class Reminder:
 
     def __init__(self):
-        self.acct_sid = os.environ["TWILIO_ACCOUNT_SID"]
-        self.auto_token = os.environ["TWILIO_AUTH_TOKEN"]
-        self.from_no = os.environ["TWILIO_WHATSAPP_NO"]
-        self.to_no = os.environ["MY_NUMBER"]
+        self.__acct_sid = os.environ["TWILIO_ACCOUNT_SID"]
+        self.__auto_token = os.environ["TWILIO_AUTH_TOKEN"]
+        self.__from_no = os.environ["TWILIO_WHATSAPP_NO"]
+        self.__to_no = os.environ["MY_NUMBER"]
         self.schedule = Create_Schedule()
         self.data = self.schedule.View("daily")
         self.reminder = None
@@ -40,12 +40,12 @@ class Reminder:
             establish a connection to the Twilio API 
         """
         try:
-                    client = Client(self.acct_sid, self.auto_token)
+                    client = Client(self.__acct_sid, self.__auto_token)
                     text = self.message
                     session = client.messages.create(
                             body=text,
-                            from_=self.from_no,
-                            to=self.to_no,
+                            from_=self.__from_no,
+                            to=self.__to_no,
                             )
                     return session
         except Exception as e:
