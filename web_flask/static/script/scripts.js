@@ -85,6 +85,7 @@ $('#my-btn').click(function() {
 $(document).ready(function() {
   // Add event listener to update button
   var topicValue, courseValue, reminderValue;
+
   $(".edit-btn").click(function() {
     // Get table rows and loop through them to add radio buttons
     if ($("#datatablesSimple tbody tr").find("input[name='row-radio']").length > 0) {
@@ -97,19 +98,25 @@ $(document).ready(function() {
       radioButton.val(rowId);
       $(this).find("td:first").prepend(radioButton);
     });
-
     // Add event listener to radio buttons
     $("input[name='row-radio']").click(function() {
       // Remove any existing text areas
+
+    $('.datatable-bottom').append("<td><button class='send-btn'>Save</button></td>");	
+    var rowId = $(this).val();
+    var columnIndex = $(this).closest("td").index();
+    var textAreaExists = $("tr[data-id='" + rowId + "'] td:nth-child(" + (columnIndex + 1) + ") textarea").length > 0;
+
       $("textarea").each(function() {
         var currentValue = $(this).val();
         $(this).closest("td").html(currentValue);
       });
-      $("textarea").remove();
-
-      // Get selected row ID and column index
-      var rowId = $(this).val();
-      var columnIndex = $(this).closest("td").index();
+    if (!textAreaExists) {
+        $("textarea").remove();
+        //$(".send-btn").remove();
+    } else {
+        $("tr[data-id='" + rowId + "'] td:nth-child(" + (columnIndex + 1) + ") textarea").remove();
+  }
 
       // If a radio button is selected, create a textarea in the corresponding row
       $(this)
@@ -121,17 +128,16 @@ $(document).ready(function() {
             $(this).html("<textarea>" + currentValue + "</textarea>");
           }
         });
-      $(this).closest("tr").append("<td><button class='send-btn'>Send</button></td>");
-
-      // Add event listener to text area
-      $(".send-btn").click(function() {
+    
+      // Add event listener to send button
+      $(document).on("click", ".send-btn", function() {
         var rows = $('#datatablesSimple tbody tr');
         rows.each(function() {
           var $thisRow = $(this);
 
-          // Get the value of the textarea in the second column
-          if ($thisRow.find('td:nth-child(5) textarea').length > 0) {
-            topicValue = $thisRow.find('td:nth-child(2) textarea').val();
+          // Get the value of the textarea in the each column
+          if ($thisRow.find('td:nth-child(4) textarea').length > 0) {
+            topicValue = $(this).find("td:nth-child(4) textarea").val();
           }
 
           if ($thisRow.find('td:nth-child(2) textarea').length > 0) {
@@ -139,10 +145,11 @@ $(document).ready(function() {
           }
 
           // Get the value of the textarea in the fifth column
-          if ($thisRow.find('td:nth-child(7) textarea').length > 0) {
-            reminderValue = $thisRow.find('td:nth-child(5) textarea').val();
-          }
+            if ($thisRow.find('td:nth-child(7) textarea').length > 0) {
+                reminderValue = $(this).find("td:nth-child(7) textarea").val();
+            }
         });
+      
 
         var postData = {
           "Topic": topicValue,
@@ -150,25 +157,44 @@ $(document).ready(function() {
           "Reminder": reminderValue
         };
 
-        var rowId = $(this).closest("tr").find("input[name='row-radio']").val();
-        var num = rowId.trim();
+        // make call to api using the Ajax method 
         $.ajax({
-          url: 'http://127.0.0.1:5001/api/v1/tasks/' + num,
+          url: 'http://127.0.0.1:5001/api/v1/tasks/' + rowId.trim(),
           type: "PUT",
           data: JSON.stringify(postData),
             contentType: "application/json",
             success: function(response) {
-              alert("Value updated successfully!");
+            // send flash message upon success
+              var message = $("<div>");
+             message.addClass("flash-message success");
+             message.text("data Updated successfully!");
+             $("body").append(message);
+  
+             // Automatically hide the message after a few seconds
+              setTimeout(function() {
+              message.hide();
+             }, 7000);
             },
             error: function(error) {
-              alert("Error updating value: " + error);
+              var message = $("<div>");
+             message.addClass("flash-message fail");
+             message.text("some error occured while updating Data!", error);
+             $("body").append(message);
+  
+             // Automatically hide the message after a few seconds
+              setTimeout(function() {
+              message.hide();
+             }, 7000);
             }
           });
-        //var currentValue = $('textarea').val();
-        //$(this).closest("td").html(currentValue);
-        $(this).remove();
+         $('.send-btn').remove();
         });
       });
     });
   });
+
+
+
+
+
 
