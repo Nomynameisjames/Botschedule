@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from numpy import empty
+# from numpy import empty
 from sqlalchemy.util import WeakSequence
 from models import graph
 from models.Schedule import Create_Schedule
@@ -214,6 +214,6 @@ class BOT(cmd.Cmd):
 
 if __name__ == '__main__':
     start_time = time.time()
-    passkey = Login()
-    if passkey.login() == True:
-        BOT().cmdloop()
+    # passkey = Login()
+    # if passkey.login() == True:
+    BOT().cmdloop()

@@ -40,7 +40,7 @@ class User(Base):
             return obj_to_str is not None and isinstance(obj_to_str, str)
         except:
             return False
- 
+
     def to_json(self):
         try:
             bm_dict = {

@@ -9,7 +9,6 @@ import schedule
 current_date_time = datetime.now()
 now = current_date_time.strftime("%Y-%m-%d")
 class Reminder:
-
     def __init__(self):
         self.__acct_sid = os.environ["TWILIO_ACCOUNT_SID"]
         self.__auto_token = os.environ["TWILIO_AUTH_TOKEN"]
@@ -33,7 +32,8 @@ class Reminder:
         """
             returns messsage displaying current daily task 
         """
-        return self.message
+        return self.messagels
+        
 
     def Twilio(self, **kwargs):
         """
