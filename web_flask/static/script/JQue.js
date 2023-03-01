@@ -10,6 +10,9 @@
        // $("#nav-id").animate({ "left" : "0%" }, 500);
     
 }); */
+
+
+// function that animates the chatbot header div 
 function ShowBox() {
     $("#nav-id").css("background-color", "black")
                 .css("color", "white");
@@ -40,7 +43,9 @@ $(document).ready(function() {
 });
 
 
+// function makes a call to the openai api for the chatbot functionality 
 function chatlog () {
+// Trigger chatlog function on enter key press
               var inputMsg = $("#my-chat-input").val();
               var postData = { "text" : inputMsg };
               $("#my-chat-input").val("");
@@ -55,6 +60,7 @@ function chatlog () {
                   success: function(response) {
                       var outputMsg = Object.values(response);
                        var msg = JSON.stringify(outputMsg);
+                      $('#nav-id').css('border', '.2em solid #39FF14');
                       console.log(outputMsg);
                       var chatLog = "<div class='sent-message'><p id='sent'>" + inputMsg + "</p></div><div class='replied-message'><p id='received'>" + msg + "</p></div>";
                         $(".chat-conversation").append(chatLog);
@@ -62,6 +68,7 @@ function chatlog () {
                   },
               error: function(jqXHR, textStatus, errorThrown) {
                   console.log('Error', textStatus, errorThrown);
+                  $('#nav-id').css('border', '.2em solid #FF5349');
                   var message = $("<div>");
                   message.addClass("flash-message fail");
                   message.text("Bot Server down please help report issue!");
@@ -74,8 +81,7 @@ function chatlog () {
               })
           };
 
-
-
+// function makes a call to the RESTFul api to create a new schedule 
 $(document).ready(function() {
   $('#add').click(function() {
     var myDay = $('.Day').val();
@@ -145,39 +151,3 @@ $(document).ready(function() {
   });
 });
 
-
-$('#remove-bin').click(function() {
-  // Get the data ID from the user
-  var Dataid = window.prompt("Please enter the data ID to delete:");
-    if ($(this).hasClass('confirm-delete')) {
-    // Send delete request to API
-        $.ajax({
-            url: 'http://127.0.0.1/api/v1/tasks/' + Dataid,
-            type: 'DELETE',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            success: function(result) {
-        // Display success message and remove the deleted item from the page
-            alert('Item deleted successfully');
-            $('#item-' + dataId).remove();
-            },
-      error: function(error) {
-        // Display error message
-        alert('Error deleting item');
-      }
-    });
-  } else {
-    // Change button appearance and prompt for confirmation
-    $(this).html('<i class="fas fa-check"></i>');
-    $(this).addClass('confirm-delete');
-    $(this).removeClass('delete-button');
-    
-    // Set timeout to revert back to original appearance after 5 seconds
-    setTimeout(function() {
-      $('.confirm-delete[data-id="' + dataId + '"]').html('Delete');
-      $('.confirm-delete[data-id="' + dataId + '"]').removeClass('confirm-delete');
-      $('.confirm-delete[data-id="' + dataId + '"]').addClass('delete-button');
-    }, 5000);
-  }
-});

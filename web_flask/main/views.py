@@ -9,34 +9,12 @@ from .. import db
 import os
 
 
-""" 
-    old config
-app = Flask(__name__)
-bootstrap = Bootstrap(app)
-moment = Moment(app)
-mail = Mail(app)
-app.config['E_MAIL'] = os.environ.get('E_MAIL')
-app.config['KEY'] = os.environ.get('KEY')
-app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['FLASKY_MAIL_SUBJECT_PREFIX'] = '[Botschedule]'
-app.config['FLASKY_MAIL_SENDER'] = 'Flasky Admin <oadava@gmail.com>'
 
 """
-
-
-#@app.route('/daily/<int:my_id>')
-#def user(my_id):
- #   file = None
-  #  k = {key: value for key, value in dic.items() if key == my_id}
-   # if k:
-    #    file = k
-    
-    #else:
-     #   abort(404, 'file not found')
-
-    #return render_template('user.html', data=file, current=datetime.utcnow())
+    This file contains all the routes for the application
+    this enables user to query the database to view Schedules
+    based on the status of the task
+"""
 
 
 @Main.route('/')
