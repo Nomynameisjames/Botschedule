@@ -2,8 +2,10 @@
 from api.v1.main import main_app
 from flask import abort, jsonify, request
 from models.Schedule import Create_Schedule as cs
+from models.Reminder import Reminder
 from models import storage
 from datetime import datetime
+from models.baseModel import User
 
 bot = cs()
 data = bot.View()
@@ -46,24 +48,16 @@ def get_task(my_id):
         req_json = request.get_json()
         if req_json is None:
             abort(400, 'Not JSON')
-        IGNORE = [
-                 'Target', 'Days', 'Created_at' ]
-        if req_json:
-            updated_dict = {
-                     k: v for k, v in req_json.items() if k not in IGNORE
-                 }
-            for key, value in updated_dict.items():
-                if key == 'Topic':
-                    doc[my_id].Topic = value
-                elif key == 'Course':
-                    doc[my_id].Course = value
-                elif key == 'Reminder':
-                    doc[my_id].Reminder = value
-                else:
-                    abort(400,  "key not found")
-                doc[my_id].Updated_at = datetime.now()
-                storage.save()
-                return jsonify(updated_dict), 200
+        updated_dict = {}
+        for key, value in req_json.items():
+            if hasattr(User, key):
+                setattr(doc[my_id], key, value)
+                updated_dict[key] = value
+        if not updated_dict:
+            abort(400, "No valid keys found")
+        doc[my_id].Updated_at = datetime.now()
+        storage.save()
+        return jsonify(updated_dict), 200
 
     if request.method == 'DELETE':
         obj = doc.get(my_id)
@@ -73,4 +67,19 @@ def get_task(my_id):
         del obj
         storage.save()
         return jsonify({"Success" : "data removed"}), 200
+
+
+
+@main_app.route('/reminder', methods=['POST'])
+def reminder():
+    bot = Reminder()
+    req_json = request.get_json()
+    mytime = req_json.get("Time")
+    sendTime = datetime.strptime(mytime, '%H:%M:%S').time()
+    now = datetime.now().time()
+    if sendTime < now:
+        abort(400, 'Time is in the past')
+    else:
+        bot.Twilio(**req_json)
+        return jsonify({"Success" : "Reminder sent"}), 200
 

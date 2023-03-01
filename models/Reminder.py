@@ -35,19 +35,23 @@ class Reminder:
         """
         return self.message
 
-    def Twilio(self):
+    def Twilio(self, **kwargs):
         """
             establish a connection to the Twilio API 
         """
         try:
-                    client = Client(self.__acct_sid, self.__auto_token)
-                    text = self.message
-                    session = client.messages.create(
-                            body=text,
-                            from_=self.__from_no,
-                            to=self.__to_no,
-                            )
-                    return session
+
+            if kwargs is None:
+                text = self.message
+            else:
+                text = kwargs.get("text")
+            client = Client(self.__acct_sid, self.__auto_token)
+            session = client.messages.create(
+                        body=text,
+                        from_=self.__from_no,
+                        to=self.__to_no,
+                        )
+            return session
         except Exception as e:
             print('Failed', e)
             return e

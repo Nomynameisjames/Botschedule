@@ -364,6 +364,8 @@ textarea::placeholder {
 .send-btn {
     margin: 0 auto;
     background-color: #000000;
+    position: absolute;
+    right: 10%;
     color:  #FFD700;
     border: .2em solid #00B7C2;
     padding: 0.2em 0.6em;
