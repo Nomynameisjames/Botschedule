@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 92f6dd458d3aae8080f75a74f974723fad90ffcd
+flasgger==0.9.5
+Flask-Cors==3.0.10
 Flask==2.2.2
 Flask-Bootstrap==3.3.7.1
 Flask-Mail==0.9.1

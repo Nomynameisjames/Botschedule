@@ -48,39 +48,15 @@
           <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
           <div class="divider-custom-line"></div>
         </div>
-
-
+        <div class="forg">
+            <h4 class="txt">Enter your Email adress and we will send you link to reset your password</h4>
+        </div>
 
         <!-- Login Section Form-->
         <div class="row justify-content-center">
           <div class="col-lg-8 col-xl-7">
             <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                 <!-- Firstname input-->
-              <div class="form-floating mb-3">
-                <input
-                  class="form-control"
-                  id="firstname"
-                  type="text"
-                  placeholder="kehinde"
-                  data-sb-validations="required,firstname"
-                />
-                <label for="firstname">Firstname</label>
-                <div class="invalid-feedback">
-                  Your Firstname is required.
-              </div>
-              <!-- Lastname input-->
-              <div class="form-floating mb-3">
-                <input
-                  class="form-control"
-                  id="lastname"
-                  type="text"
-                  placeholder="owolabi"
-                  data-sb-validations="required,lastname"
-                />
-                <label for="lastname">Lastname</label>
-                <div class="invalid-feedback">
-                  Your Lastname is required.
-              </div>
+                
               <!-- Email address input-->
               <div class="form-floating mb-3">
                 <input
@@ -98,45 +74,14 @@
                   Email is not valid.
                 </div>
               </div>
-              <!-- Password input-->
-              <div class="form-floating mb-3">
-                <input
-                  class="form-control"
-                  id="phone"
-                  type="password"
-                  placeholder="#$%780987wdlKL"
-                  data-sb-validations="required"
-                />
-                <label for="password">Password</label>
-                <div class="invalid-feedback" data-sb-feedback="password:required">
-                  A password is required.
-                </div>
-              </div>
-              <!-- Password input again-->
-              <div class="form-floating mb-3">
-                <input
-                  class="form-control"
-                  id="password"
-                  type="password"
-                  placeholder="#$%780987wdlKL"
-                  data-sb-validations="required"
-                />
-                <label for="password">Confirm Password</label>
-                <div class="invalid-feedback" data-sb-feedback="password:required">
-                  Password must tally.
-                </div>
-              </div>
-              <!-- Login-->
               
               <!-- Login Button-->
-              <button
-                class="btn btn-primary btn-xl"
-                id="submitButton"
-                type="submit"
-              >
-              Signup
-                <!-- <a href="{{ url_for('Main.Access') }}">Login</a>  -->
-              </button>
+              <a href="{{ url_for('Main.Access') }}">
+                <button class="btn btn-primary btn-xl" id="submitButton" type="submit">
+                Reset Password
+                </button>
+                </a>
+
             </form>
           </div>
         </div>

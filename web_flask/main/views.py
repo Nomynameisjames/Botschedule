@@ -34,6 +34,19 @@ def daily():
     dic = bot.View('daily')
     return render_template('task_status.html', data=dic)
 
+@Main.route('/Access')
+def Access():
+    # bot = Create_Schedule()
+    # dic = bot.View('login')
+    return render_template('login.html')
+
+@Main.route('/reg')
+def reg():
+    # bot = Create_Schedule()
+    # dic = bot.View('login')
+    return render_template('register.html')
+
+
 @Main.route('/View')
 def view():
     bot = Create_Schedule()
@@ -50,3 +63,6 @@ def upcoming():
 def new():
     return render_template('table.html')
 
+@Main.route('/reset')
+def reset():
+    return render_template('forget.html')
