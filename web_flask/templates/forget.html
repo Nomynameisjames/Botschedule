@@ -1,93 +1,48 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Signup</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="static/styles/styles.css" rel="stylesheet" />
-  </head>
-<body>
-    <!-- Login Section-->
-    <section class="page-section" id="login">
-      <div class="container">
-        <!-- Login Section Heading-->
-        <h2
-          class="page-section-heading text-center text-uppercase text-secondary mb-0"
-        >
-          Signup
-        </h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="static/styles/begin.css" rel="stylesheet" />
 
-        <!-- Icon Divider-->
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
+</head>
+<body class="mid">
+    
+    <!-- <div class=" ps-md-0 siz"> -->
+  <!-- <div class="row g-0"> -->
+    <!-- <div class="col-md-8 col-lg-6"> -->
+      <div class="login d-flex align-items-center py-5 ">
+        <div class="logo pd">
+            <img src="static/assets/img/lloo.png" alt="">
         </div>
-        <div class="forg">
-            <h4 class="txt">Enter your Email adress and we will send you link to reset your password</h4>
-        </div>
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading rec mb-4">Recover Password</h3>
+              <h1 class="sub-heading">Enter your email adress and we will send you a recovery mail</h1>
 
-        <!-- Login Section Form-->
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-xl-7">
-            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                
-              <!-- Email address input-->
-              <div class="form-floating mb-3">
-                <input
-                  class="form-control"
-                  id="email"
-                  type="email"
-                  placeholder="name@example.com"
-                  data-sb-validations="required,email"
-                />
-                <label for="email">Email address</label>
-                <div class="invalid-feedback" data-sb-feedback="email:required">
-                  An email is required.
+              <!-- Forget password Form -->
+              <form class="form-body">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
                 </div>
-                <div class="invalid-feedback" data-sb-feedback="email:email">
-                  Email is not valid.
+                <div class="d-grid">
+                  <!-- <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Send Email</button> -->
+                  <a class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" href="{{ url_for('Main.Access') }}">Sign in</a>
                 </div>
-              </div>
-              
-              <!-- Login Button-->
-              <a href="{{ url_for('Main.Access') }}">
-                <button class="btn btn-primary btn-xl" id="submitButton" type="submit">
-                Reset Password
-                </button>
-                </a>
 
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-    <script src="js/scriptsland.js"></script>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

@@ -1,148 +1,54 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Signup</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Font Awesome icons (free version)-->
-    <script
-      src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Google fonts-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:400,700"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="static/styles/styles.css" rel="stylesheet" />
-  </head>
-<body>
-    <!-- Login Section-->
-    <section class="page-section" id="login">
-      <div class="container">
-        <!-- Login Section Heading-->
-        <h2
-          class="page-section-heading text-center text-uppercase text-secondary mb-0"
-        >
-          Signup
-        </h2>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="static/styles/begin.css" rel="stylesheet" />
 
-        <!-- Icon Divider-->
-        <div class="divider-custom">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
+</head>
+<body class="mid">
+      <div class="login d-flex align-items-center py-5 ">
+
+        <div class="logo">
+            <img src="static/assets/img/lloo.png" alt="">
         </div>
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Login</h3>
 
-
-
-        <!-- Login Section Form-->
-        <div class="row justify-content-center">
-          <div class="col-lg-8 col-xl-7">
-            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                 <!-- Firstname input-->
-              <div class="form-floating mb-3">
-                <input
-                  class="form-control"
-                  id="firstname"
-                  type="text"
-                  placeholder="kehinde"
-                  data-sb-validations="required,firstname"
-                />
-                <label for="firstname">Firstname</label>
-                <div class="invalid-feedback">
-                  Your Firstname is required.
-              </div>
-              <!-- Lastname input-->
-              <div class="form-floating mb-3">
-                <input
-                  class="form-control"
-                  id="lastname"
-                  type="text"
-                  placeholder="owolabi"
-                  data-sb-validations="required,lastname"
-                />
-                <label for="lastname">Lastname</label>
-                <div class="invalid-feedback">
-                  Your Lastname is required.
-              </div>
-              <!-- Email address input-->
-              <div class="form-floating mb-3">
-                <input
-                  class="form-control"
-                  id="email"
-                  type="email"
-                  placeholder="name@example.com"
-                  data-sb-validations="required,email"
-                />
-                <label for="email">Email address</label>
-                <div class="invalid-feedback" data-sb-feedback="email:required">
-                  An email is required.
+              <!-- Signup Form -->
+              <form class="form-body">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Kehinde">
+                  <label for="floatingInput">Firstname</label>
                 </div>
-                <div class="invalid-feedback" data-sb-feedback="email:email">
-                  Email is not valid.
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Owolabi">
+                  <label for="floatingInput">Lastname</label>
                 </div>
-              </div>
-              <!-- Password input-->
-              <div class="form-floating mb-3">
-                <input
-                  class="form-control"
-                  id="phone"
-                  type="password"
-                  placeholder="#$%780987wdlKL"
-                  data-sb-validations="required"
-                />
-                <label for="password">Password</label>
-                <div class="invalid-feedback" data-sb-feedback="password:required">
-                  A password is required.
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
                 </div>
-              </div>
-              <!-- Password input again-->
-              <div class="form-floating mb-3">
-                <input
-                  class="form-control"
-                  id="password"
-                  type="password"
-                  placeholder="#$%780987wdlKL"
-                  data-sb-validations="required"
-                />
-                <label for="password">Confirm Password</label>
-                <div class="invalid-feedback" data-sb-feedback="password:required">
-                  Password must tally.
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
                 </div>
-              </div>
-              <!-- Login-->
-              
-              <!-- Login Button-->
-              <button
-                class="btn btn-primary btn-xl"
-                id="submitButton"
-                type="submit"
-              >
-              Signup
-                <!-- <a href="{{ url_for('Main.Access') }}">Login</a>  -->
-              </button>
-            </form>
+                <div class="d-grid">
+                  <!-- <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Signup</button> -->
+                  <a class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" href="{{ url_for('Main.Access') }}">Sign in</a>
+                </div>
+                <div class="text-center">
+                    Already have an account? &nbsp;&nbsp;&nbsp;&nbsp;  <a class="small" href="{{ url_for('Main.Access') }}"> Login</a>
+              </form>
+            </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <script src="js/scriptsland.js"></script>
+</div>
 
 </body>
-</html>
+</html> 

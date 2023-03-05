@@ -242,6 +242,7 @@
   background-color: #d3d3d3;
 }
 
+
 textarea::placeholder {
   color: #000000;
   font-size: 10px;
@@ -724,6 +725,7 @@ button:not(:disabled),
   cursor: pointer;
 }
 
+
 ::-moz-focus-inner {
   padding: 0;
   border-style: none;
@@ -769,6 +771,7 @@ legend + * {
 
 ::-webkit-inner-spin-button {
   height: auto;
+
 }
 
 [type='search'] {

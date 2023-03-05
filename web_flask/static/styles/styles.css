@@ -368,6 +368,7 @@ select {
   text-transform: none;
 }
 
+
 [role=button] {
   cursor: pointer;
 }
@@ -685,6 +686,7 @@ progress {
   margin-right: calc(-0.5 * var(--bs-gutter-x));
   margin-left: calc(-0.5 * var(--bs-gutter-x));
 }
+
 .row > * {
   flex-shrink: 0;
   width: 100%;
@@ -1411,6 +1413,9 @@ progress {
   .col-lg-8 {
     flex: 0 0 auto;
     width: 66.66666667%;
+    border: #a19c9c28 solid 2px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 50px rgb(205, 201, 201);
   }
 
   .col-lg-9 {
@@ -1620,6 +1625,15 @@ progress {
     flex: 0 0 auto;
     width: 58.33333333%;
   }
+
+  .bod{
+    display: flex; /* use flexbox layout */
+    align-items: center; /* center items vertically */
+    justify-content: center; /* center items horizontally */
+    height: 100%; /* set the height of the container */
+    border: 800px;
+}
+
 
   .col-xl-8 {
     flex: 0 0 auto;
@@ -2671,6 +2685,7 @@ textarea.form-control-lg {
 
 .form-floating {
   position: relative;
+  margin: 0 20px;
 }
 .form-floating > .form-control,
 .form-floating > .form-select {
@@ -3037,6 +3052,9 @@ textarea.form-control-lg {
 .btn:disabled, .btn.disabled, fieldset:disabled .btn {
   pointer-events: none;
   opacity: 0.65;
+}
+.full{
+  width: 100%;
 }
 
 .btn-primary {
