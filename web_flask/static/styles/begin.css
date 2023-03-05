@@ -84,22 +84,37 @@
 .text-center{
   padding-top: 20px;
 }
-/* .logo{
+.logo{
   justify-content: center;
   align-items: center;
-} */
-.logo {
-  position: relative;
 }
 
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  padding-bottom: 50px;
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  /* background-image: url('static/assets/img/lloo.png');
+  background-size: cover; */
+}
+
+ /* .logo {
+  position: relative;
+} */
+/*
 .logo img {
   position: absolute;
-  /* top: 50%; */
+  top: 50%;
   left: 85%;
-  /* padding-bottom: 30px; */
+  padding-bottom: 30px;
 
   transform: translate(-50%, -50%);
-}
+} */
 .small{
   text-decoration: none;
   font-size: 18px;

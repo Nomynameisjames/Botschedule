@@ -14,9 +14,9 @@
   <!-- <div class="row g-0"> -->
     <!-- <div class="col-md-8 col-lg-6"> -->
       <div class="login d-flex align-items-center py-5 ">
-        <div class="logo pd">
+        <!-- <div class="logo pd">
             <img src="static/assets/img/lloo.png" alt="">
-        </div>
+        </div> -->
         <div class="container">
           <div class="row">
             
@@ -32,9 +32,13 @@
                 </div>
                 <div class="d-grid">
                   <!-- <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Send Email</button> -->
-                  <a class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" href="{{ url_for('Main.Access') }}">Sign in</a>
-                </div>
+                  <a class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" href="{{ url_for('Main.Access') }}">Send Email</a>
 
+                </div>
+                  <div class="text-center">
+
+                  <a class="small" href="{{ url_for('Main.Access') }}"> Login</a>
+                  </div>
               </form>
             </div>
           </div>
