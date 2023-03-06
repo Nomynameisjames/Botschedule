@@ -121,6 +121,8 @@ At the same time, we need your help
 
 BotSchedule is just getting started. If you could help us find or fix potential bugs, we would be grateful!
 
+Have a bug or a feature request? [Please open a new issue](https://github.com/Nomynameisjames/Botschedule/issues)
+
 ### New Features
 
 Have some awesome ideas? Feel free to open an issue or submit your pull request directly!
