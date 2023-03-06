@@ -1,81 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Register - SB Admin</title>
-        <link href="static/styles/style_3.css" rel="stylesheet" />
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
-    <body class="bg-primary">
-        <header>
-            <div class="logo-div">
-                <img class="logo" src="static/assets/img/bots.png" alt="logo"/>
-            </div>  
-        </header>
-        <div id="layoutAuthentication">
-            <div id="layoutAuthentication_content">
-                <main>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-7">
-                                <div class="card shadow-lg border-0 rounded-lg mt-5">
-                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Create Account</h3></div>
-                                    <div class="card-body">
-                                        <form method="POST" action="">
-                                            {% import "bootstrap/wtf.html" as wtf %}
-                                            {{ form.hidden_tag() }}
-                                           <div class="row mb-3">
-                                                <div class="col-md-6"> 
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        {{ form.username.label(class="form-control-label") }}
-                                                        {{ form.username(class="form-control form-control-lg") }}
-                                                    </div>
-                                                </div>
-                                                    <div class="col-md-6"> 
-                                                    <div class="form-floating">
-                                                        {{ form.email.label(class="form-control-label") }}
-                                                        {{ form.email(class="form-control form-control-lg }}
-                                                    </div>
-                                                </div>
-                                            </form>
-                                                </div>
-                                                <div class="row mb-3">
-                                                    <div class="col-md-6">
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        {{ form.password.label(class="form-control-label") }}
-                                                        {{ form.password(class="form-control form-control-lg") }}
-                                                    </div>
-                                                </div>
-                                                   <div class="col-md-6"> 
-                                                    <div class="form-floating mb-3 mb-md-0">
-                                                        {{ form.confirm_password.label(class="form-control-label") }}
-                                                        {{ form.confirm_password(class="form-control form-control-lg") }}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                               <div class="mt-4 mb-0">
-                                                <div class="d-grid"><a class="btn btn-primary btn-block" href="login.html">{{ form.submit() }}</a></div>
-                                            </div>
-                                            {{ wtf.quick_form(form) }}
-                                        </form>
-                                    </div>
-                                    <div class="card-footer text-center py-3">
-                                        <div class="small">Have an account? <a class="reg" href="{{ url_for('Main.login') }}">Login</a></div>
-                                    </div>
-                                </div>
-                            </div>
+{% extends "landing_page.html" %}
+{% block content %}
+    <div class="register">
+        <form class="new-form" method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="new-input">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                <div class="form-group">
+                    {{ form.username.label(class="form-control-label") }}
+
+                    {% if form.username.errors %}
+                        {{ form.username(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
                         </div>
-                    </div>
-                </main>
+                    {% else %}
+                        {{ form.username(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+                <div class="new-input">
+                    {{ form.email.label(class="form-control-label") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.email(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+                <div class="new-input">
+                    {{ form.password.label(class="form-control-label") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.password(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+                <div class="new-input">
+                    {{ form.confirm_password.label(class="form-control-label") }}
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class="form-control form-control-sm is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.confirm_password(class="form-control form-control-sm") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="new-input">
+                {{ form.submit(class="btn btn-outline-info") }}
             </div>
-            <div id="layoutAuthentication_footer">
-            </div>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="js/scripts.js"></script>
-    </body>
-</html>
+        </form>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            Already Have An Account? <a class="ml-2" href="{{ url_for('Main.login') }}">Sign In</a>
+        </small>
+    </div>
+    </div>
+{% endblock content %}

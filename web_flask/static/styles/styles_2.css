@@ -76,6 +76,100 @@
   }
 }
 
+
+.register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: url(https://i.postimg.cc/nhhg60tJ/tom-gainor-vigd-QSTCk-VU-unsplash.jpg) no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #818181;
+  }
+
+  .new-form {
+    display:block;
+    position:relative;
+    width:550px;
+    height: 550px;
+    background:#fceaee;
+    margin: 50px auto;
+    padding:50px;
+    background: rgba( 255, 255, 255, 0.45 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+  .new-input input:not(:focus):placeholder-shown + label {
+    top: 10px;
+  }
+  #new-h2 {
+    font-size: 40px;
+  }
+
+  .new-btn {
+    border: 2px solid #E5EBE6;
+    background-color: transparent;
+    cursor: pointer;
+    float: right;
+    height: 40px;
+    width: 124px;
+    font-size: 20px;
+  }
+  
+  .new-btn:hover {
+    border: none;
+    background-color: green;
+  }
+
+  #leg {
+      text-align: center;
+      text-decoration: none;
+  }
+
+  #datatablesSimple {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+@media (max-width: 576px) {
+  #datatablesSimple {
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+  #quiz-sec {
+	margin: auto;
+	padding: 20px;
+	max-width: 75%;
+}
+#h-quiz {
+    text-align: center;
+    color: #FFFFFF;
+}
+.quiz-body {
+    background-color: #2c2c2c;
+}
+
+#quiz-text {
+    color: #FFFFFF
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);
