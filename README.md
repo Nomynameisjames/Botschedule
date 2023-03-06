@@ -1,12 +1,12 @@
 				# BotSchedule
 		## BotSchedule: Automating Learning and Task Management
-**"Streamlining and personalising your learning journey through self-customised scheduling and resource recommendations."
+## "Streamlining and personalising your learning journey through self-customised scheduling and resource recommendations."
 
 
 ## Features
 
 - [x] Self-customised schedule
-- [x] Allows users to select a specific area of study, pick a course, set a date, and reminder 
+- [x] Allows users to select a specific area of study, pick a course, set a date, and reminder 
 - [x] Provides recommendations of websites and resources to help maximise study on the topic area
 - [x] Plots a weekly and monthly graph to show performance based on daily task average and targets completed 
 - [x] Includes a chatbot functionality using the OpenAI API for assistance 
@@ -23,14 +23,23 @@
 ### Why You Should Use BotSchedule
 
 | --- | :---: | :---: | :---: |
+
 | ⏰ Simplifies Task Scheduling |  |   | ✓ |
+
 | 📆 Increases Efficiency |  | | ✓ |
+
 | 🌈 Reduces Errors | | | ✓ |
+
 | 🗣️ Saves Time | | | ✓ |
+
 | 🏷 Increases Productivity | | | ✓ |
+
 | 📝 Easy Integration | | | ✓ |
+
 | 🎡 Easy to Use | |  | ✓ |
+
 | 🚦 Audit Trail | |  | ✓ |
+
 | 🍰 Flexibility | | | ✓ |
 
 ### Overview
@@ -42,18 +51,30 @@ BotSchedule offers numerous benefits, including easy integration with other bot 
 BotSchedule is highly customizable, allowing users to set up tasks to run exactly as needed. It offers support for multiple programming languages, making it accessible to people of all levels. 
 
 
-#Requirements:
+### Requirements:
 
-*.	set up a virtual environment which enables you install packages and modules seperate from your system-wide environment
-	first install a venv module with the command
-	''' python3 -m pip install virtualenv '''
-	Create a new virtual environment
-	'''  python3 -m venv myenv '''
-	Activate the virtual environment
- 	'''  source myenv/bin/activate '''
+* **set up a virtual environment which enables you install packages and modules seperate from your system-wide environment**
+	
+	* **first install a venv module with the command**
+	
+		''' python3 -m pip install virtualenv '''
+	
+	* **Create a new virtual environment**    
+		'''  python3 -m venv myenv '''
+	
+	* **Activate the virtual environment**
+
+
+
+
+
+
+
+ 	
+		'''  source myenv/bin/activate '''
 	
 
-*.	setup a mysql database 
+* **setup a mysql database**
 	''' pip3 install mysql-client '''
 	
 
@@ -65,18 +86,43 @@ BotSchedule is highly customizable, allowing users to set up tasks to run exactl
     * **`dev/setup.sql`:** Drops test and dev databases, and then reinitializes
      the datbase.
   
-    * Usage: `$ cat dev/setup.sql | mysql -uroot -p`
+    * **Usage:** `$ cat dev/setup.sql | mysql -uroot -p`
   
     * **`setup_mysql_dev.sql`:** initialiezs dev database with mysql for testing
  
-    * Usage: `$ cat setup_mysql_dev.sql | mysql -uroot -p`
+    * **Usage:** `$ cat setup_mysql_dev.sql | mysql -uroot -p`
  
     * **`setup_mysql_test.sql`:** initializes test database with mysql for testing
   
-    * Usage: `$ cat setup_mysql_test.sql | mysql -uroot -p`
+    * **Usage:** `$ cat setup_mysql_test.sql | mysql -uroot -p`
     
 	
-	* install the required module
-	''' pip3 install -r requirement.txt '''
+* **install the required module**
+	* **''' pip3 install -r requirement.txt '''**
 
- 
+
+
+
+
+
+
+
+
+## Contributing
+
+Like **BotSchedule**? Thanks!!!
+
+At the same time, we need your help~
+
+### Finding Bugs
+
+BotSchedule is just getting started. If you could help us find or fix potential bugs, we would be grateful!
+
+### New Features
+
+Have some awesome ideas? Feel free to open an issue or submit your pull request directly!
+
+### Documentation improvements.
+
+Improvements to README and documentation are welcome at all times, whether typos or our lame English, 🤣.
+
