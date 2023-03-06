@@ -4,7 +4,7 @@ from flask import abort, jsonify, request
 from models.Schedule import Create_Schedule as cs
 from models.Reminder import Reminder
 from models import storage
-from datetime import datetime
+from datetime import datetime, timedelta
 from models.baseModel import User
 
 bot = cs()
@@ -72,14 +72,9 @@ def get_task(my_id):
 
 @main_app.route('/reminder', methods=['POST'])
 def reminder():
-    bot = Reminder()
-    req_json = request.get_json()
-    mytime = req_json.get("Time")
-    sendTime = datetime.strptime(mytime, '%H:%M:%S').time()
-    now = datetime.now().time()
-    if sendTime < now:
-        abort(400, 'Time is in the past')
-    else:
+    if request.method == 'POST':
+        bot = Reminder()
+        req_json = request.get_json()
         bot.Twilio(**req_json)
         return jsonify({"Success" : "Reminder sent"}), 200
 

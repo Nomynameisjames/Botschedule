@@ -17,7 +17,9 @@ class Reminder:
         self.schedule = Create_Schedule()
         self.data = self.schedule.View("daily")
         self.reminder = None
-        for k,v in self.data.items():
+        self.message = None
+    """   
+       for k,v in self.data.items():
             if v['Date'] == now:
                 self.date = datetime.strptime(self.data[k]["Date"], "%Y-%m-%d")
                 self.reminder = datetime.strptime(self.data[k]["Reminder"],
@@ -25,14 +27,14 @@ class Reminder:
                 self.message = f"the following tasks are due {k} {v}"
                 self.my_time = datetime.combine(self.date, self.reminder)
                 self.time_delta = self.my_time - datetime.now()	
-
+    """
 
 
     def Get_daily(self):
         """
             returns messsage displaying current daily task 
         """
-        return self.messagels
+        return self.message
         
 
     def Twilio(self, **kwargs):

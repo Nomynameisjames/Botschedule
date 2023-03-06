@@ -1,17 +1,3 @@
-/* $(function ShowBox() {
-        $("#nav-id").css("background-color", "black")
-                    .css("color", "white")
-
-        $("#nav-id").slideUp(10000, function()
-	                {
-		                $("#nav-id").slideDown(10000);
-	                });
-                   // .animate({ "left" : "50%" }, 5000);
-       // $("#nav-id").animate({ "left" : "0%" }, 500);
-    
-}); */
-
-
 // function that animates the chatbot header div 
 function ShowBox() {
     $("#nav-id").css("background-color", "black")
@@ -59,7 +45,7 @@ function chatlog () {
                   data: JSON.stringify(postData),
                   success: function(response) {
                       var outputMsg = Object.values(response);
-                       var msg = JSON.stringify(outputMsg);
+                       var msg = JSON.stringify(outputMsg).replace(/\n|\[|\]/g, '');;
                       $('#nav-id').css('border', '.2em solid #39FF14');
                       console.log(outputMsg);
                       var chatLog = "<div class='sent-message'><p id='sent'>" + inputMsg + "</p></div><div class='replied-message'><p id='received'>" + msg + "</p></div>";
@@ -150,4 +136,3 @@ $(document).ready(function() {
     }
   });
 });
-

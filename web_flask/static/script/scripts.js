@@ -93,8 +93,8 @@ $(document).ready(function() {
     }
 
     $("#datatablesSimple tbody tr").each(function() {
-      var rowId = $(this).find("td:first").text();
-      var radioButton = $("<input type='radio' name='row-radio'>");
+      var rowId = $(this).find("td:eq(1)").text();
+      var radioButton = $("<input  class='form-check-input mt-0' type='radio' name='row-radio'>");
       radioButton.val(rowId);
       $(this).find("td:first").prepend(radioButton);
     });
@@ -104,7 +104,7 @@ $(document).ready(function() {
 
     $('.datatable-bottom').append("<td><button class='send-btn'>Save</button></td>");	
     var rowId = $(this).val();
-    var columnIndex = $(this).closest("td").index();
+    var columnIndex = $(this).closest("td:eq(1)").index();
     var textAreaExists = $("tr[data-id='" + rowId + "'] td:nth-child(" + (columnIndex + 1) + ") textarea").length > 0;
 
       $("textarea").each(function() {
@@ -121,11 +121,11 @@ $(document).ready(function() {
       // If a radio button is selected, create a textarea in the corresponding row
       $(this)
         .closest("tr")
-        .find("td:not(:first-child)")
+        .find("td:not(:lt(2))")
         .each(function(index) {
           if (!$(this).hasClass("Dont")) {
             var currentValue = $(this).text();
-            $(this).html("<textarea>" + currentValue + "</textarea>");
+            $(this).html("<textarea class='update-text form-control'>" + currentValue + "</textarea>");
           }
         });
     
@@ -136,17 +136,17 @@ $(document).ready(function() {
           var $thisRow = $(this);
 
           // Get the value of the textarea in the each column
-          if ($thisRow.find('td:nth-child(4) textarea').length > 0) {
-            topicValue = $(this).find("td:nth-child(4) textarea").val();
+          if ($thisRow.find('td:nth-child(5) textarea').length > 0) {
+            topicValue = $(this).find("td:nth-child(5) textarea").val();
           }
 
-          if ($thisRow.find('td:nth-child(2) textarea').length > 0) {
-            courseValue = $thisRow.find('td:nth-child(3) textarea').val();
+          if ($thisRow.find('td:nth-child(4) textarea').length > 0) {
+            courseValue = $thisRow.find('td:nth-child(4) textarea').val();
           }
 
           // Get the value of the textarea in the fifth column
-            if ($thisRow.find('td:nth-child(7) textarea').length > 0) {
-                reminderValue = $(this).find("td:nth-child(7) textarea").val();
+            if ($thisRow.find('td:nth-child(8) textarea').length > 0) {
+                reminderValue = $(this).find("td:nth-child(8) textarea").val();
             }
         });
       

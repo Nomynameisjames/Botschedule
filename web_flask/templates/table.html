@@ -2,16 +2,17 @@
 {% block table %}
 <script type="text/javascript"  src="static/script/JQue.js"></script>
 <tr>
+    <td> </td>
     <td><Default</td>
-    <td><textarea class="Day" id="con" placeholder="%Y-%m-%d"></textarea></td>
-    <td><textarea class="Course" id="con"></textarea></td>
-    <td><textarea class="Topic" id="con"></textarea></td>
+    <td><input class="Day form-control" id="con" placeholder="%Y-%m-%d"></input></td>
+    <td><input class="Course form-control" id="con"></input></td>
+    <td><input class="Topic form-control" id="con"></input></td>
     <td><Default</td>
     <td><Default</td>
-    <td><textarea class="Reminder" id="con" placeholder="%H-%m-%s"></textarea></td>
+    <td><input class="Reminder form-control" id="con" placeholder="%H-%m-%s"></input></td>
     <td><Default</td>
 </tr>
 </tbody>
-<button id="add"><em>Save</button>
+<button type="button" class="btn btn-outline-success" id="add" ><em>Save</button>
 </table>
 {% endblock %}

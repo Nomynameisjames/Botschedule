@@ -1,5 +1,6 @@
 from flask import Flask, render_template, abort, url_for
 from models.Schedule import Create_Schedule
+from models.checker import Checker
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from datetime import datetime
@@ -15,7 +16,7 @@ import os
     this enables user to query the database to view Schedules
     based on the status of the task
 """
-
+quiz_data = {}
 
 @Main.route('/')
 def front_page():
@@ -49,4 +50,19 @@ def upcoming():
 @Main.route('/new')
 def new():
     return render_template('table.html')
+
+@Main.route('/quiz')
+def quiz():
+    global quiz_data # declare global variable
+    
+    bot = Checker()
+    data_id = bot.task_ID
+    if not bot.task or not data_id:
+        return f"Sorry, there are no tasks available at the moment."
+    if not quiz_data: # check if global variable is not empty
+        dic = bot.Question()
+        quiz_data = dic # store results in global variable
+        return render_template('quiz.html', data=dic, data_ID=data_id)
+    else:
+        return render_template('quiz.html', data=quiz_data, data_ID=data_id)
 

@@ -122,6 +122,7 @@ class Create_Schedule(User):
                 self.__data[my_id].Target = 1
                 self.__data[my_id].Average = arg
                 self.__data[my_id].Updated_at = self.now
+                models.storage.save()
             else:
                 print("data empty")
         models.storage.save()
