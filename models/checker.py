@@ -92,7 +92,7 @@ class Checker:
             """
                 returns a JSON value of the API response
             """
-            with open('response.json', 'a') as file:
+            with open('response.json', 'w') as file:
                 json.dump(response, file)
             answer = response.choices[0].text
             return answer.strip()
