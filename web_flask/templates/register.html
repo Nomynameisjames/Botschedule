@@ -1,72 +1,56 @@
-{% extends "landing_page.html" %}
-{% block content %}
-    <div class="register">
-        <form class="new-form" method="POST" action="">
-            {{ form.hidden_tag() }}
-            <fieldset class="new-input">
-                <legend class="border-bottom mb-4">Join Today</legend>
-                <div class="form-group">
-                    {{ form.username.label(class="form-control-label") }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="static/styles/begin.css" rel="stylesheet" />
 
-                    {% if form.username.errors %}
-                        {{ form.username(class="form-control form-control-sm is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.username.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.username(class="form-control form-control-sm") }}
-                    {% endif %}
+</head>
+<body>
+    <!-- <div class="header">
+        <div class="logo">
+            <img src="static/assets/img/lloo.png" alt="">
+        </div>
+    </div> -->
+      <div class="login d-flex align-items-center py-5 ">
+
+        <div class="container">
+          <div class="row">
+            
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Signup</h3>
+
+              <!-- Signup Form -->
+              <form class="form-body">
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Kehinde">
+                  <label for="floatingInput">Firstname</label>
                 </div>
-                <div class="new-input">
-                    {{ form.email.label(class="form-control-label") }}
-                    {% if form.email.errors %}
-                        {{ form.email(class="form-control form-control-sm is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.email.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.email(class="form-control form-control-sm") }}
-                    {% endif %}
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="floatingInput" placeholder="Owolabi">
+                  <label for="floatingInput">Lastname</label>
                 </div>
-                <div class="new-input">
-                    {{ form.password.label(class="form-control-label") }}
-                    {% if form.password.errors %}
-                        {{ form.password(class="form-control form-control-sm is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.password.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.password(class="form-control form-control-sm") }}
-                    {% endif %}
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                  <label for="floatingInput">Email address</label>
                 </div>
-                <div class="new-input">
-                    {{ form.confirm_password.label(class="form-control-label") }}
-                    {% if form.confirm_password.errors %}
-                        {{ form.confirm_password(class="form-control form-control-sm is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.confirm_password.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.confirm_password(class="form-control form-control-sm") }}
-                    {% endif %}
+                <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                  <label for="floatingPassword">Password</label>
                 </div>
-            </fieldset>
-            <div class="new-input">
-                {{ form.submit(class="btn btn-outline-info") }}
+                <div class="d-grid">
+                  <!-- <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Signup</button> -->
+                  <a class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" href="{{ url_for('Main.Access') }}">Sign up</a>
+                </div>
+                <div class="text-center">
+                    Already have an account? &nbsp;&nbsp;&nbsp;&nbsp;  <a class="small" href="{{ url_for('Main.Access') }}"> Login</a>
+              </form>
             </div>
-        </form>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            Already Have An Account? <a class="ml-2" href="{{ url_for('Main.login') }}">Sign In</a>
-        </small>
-    </div>
-    </div>
-{% endblock content %}
+            </div>
+          </div>
+</div>
+
+</body>
+</html> 
