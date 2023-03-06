@@ -108,11 +108,14 @@ BotSchedule is highly customizable, allowing users to set up tasks to run exactl
 
 
 
+
+
+
 ## Contributing
 
 Like **BotSchedule**? Thanks!!!
 
-At the same time, we need your help~
+At the same time, we need your help
 
 ### Finding Bugs
 
@@ -124,5 +127,5 @@ Have some awesome ideas? Feel free to open an issue or submit your pull request 
 
 ### Documentation improvements.
 
-Improvements to README and documentation are welcome at all times, whether typos or our lame English, 🤣.
+Improvements to README and documentation are welcome at all times, whether typos or our lame English. 🤣.
 
