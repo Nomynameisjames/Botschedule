@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.4/iconify-icon.min.js"></script>
     <meta charset="utf-8" />
     <meta
         name="viewport"
@@ -29,16 +31,22 @@
     />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="static/styles/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+
   </head>
   <body id="page-top">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+
     <!-- Navigation-->
 
     <nav
       class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top"
-      id="mainNav"
-    >
+      id="mainNav">
       <div class="container">
-        <a class="navbar-brand" href="#page-top">BotSchedule</a>
+        <a class="navbar-brand" href="#">BotSchedule</a>
         <button
           class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded"
           type="button"
@@ -46,8 +54,7 @@
           data-bs-target="#navbarResponsive"
           aria-controls="navbarResponsive"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
         </button>
@@ -64,7 +71,7 @@
               >
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about"
+              <a class="nav-link py-3 px-0 px-lg-3 rounded" href="{{ url_for('Main.about') }}"
                 >About</a
               >
             </li>
@@ -73,6 +80,7 @@
       </div>
     </nav>
     <!-- Masthead-->
+{% block about %}
     <header class="masthead bg-primary text-white text-center">
       <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
@@ -96,8 +104,7 @@
       <div class="container">
         <!-- Portfolio Section Heading-->
         <h2
-          class="page-section-heading text-center text-uppercase text-secondary mb-0"
-        >
+          class="page-section-heading text-center text-uppercase text-secondary mb-0">
           
         </h2>
        
@@ -105,191 +112,137 @@
         <div class="row justify-content-center">
           <!-- Portfolio Item 1-->
           <div class="col-md-6 col-lg-4 mb-5">
-            <div
-              class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              
-            >
+            <div class="portfolio-item mx-auto"
+              data-bs-toggle="modal">
               <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
+                  class="portfolio-item-caption-content text-center text-white">
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
               <img
                 class="img-fluid"
                 src="static/assets/img/1.png"
-                alt="..."
-              />
+                alt="..."/>
             </div>
           </div>
           <!-- Portfolio Item 2-->
           <div class="col-md-6 col-lg-4 mb-5">
             <div
               class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              
-            >
+              data-bs-toggle="modal">
               <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
+                  class="portfolio-item-caption-content text-center text-white">
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
               <img
                 class="img-fluid"
                 src="static/assets/img/2.png"
-                alt="..."
-              />
+                alt="..."/>
             </div>
           </div>
           <!-- Portfolio Item 3-->
           <div class="col-md-6 col-lg-4 mb-5">
             <div
               class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              
-            >
+              data-bs-toggle="modal">
               <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
+                  class="portfolio-item-caption-content text-center text-white">
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
               <img
                 class="img-fluid"
                 src="static/assets/img/3.png"
-                alt="..."
-              />
+                alt="..."/>
             </div>
           </div>
           <!-- Portfolio Item 4-->
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
             <div
               class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              
-            >
+              data-bs-toggle="modal">
               <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
+                  class="portfolio-item-caption-content text-center text-white">
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
               <img
                 class="img-fluid"
                 src="static/assets/img/4.png"
-                alt="..."
-              />
+                alt="..."/>
             </div>
           </div>
           <!-- Portfolio Item 5-->
           <div class="col-md-6 col-lg-4 mb-5 mb-md-0">
             <div
               class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              
-            >
+              data-bs-toggle="modal">
               <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
+                  class="portfolio-item-caption-content text-center text-white">
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
               <img
                 class="img-fluid"
                 src="static/assets/img/5.png"
-                alt="..."
-              />
+                alt="..."/>
             </div>
           </div>
           <!-- Portfolio Item 6-->
           <div class="col-md-6 col-lg-4">
             <div
               class="portfolio-item mx-auto"
-              data-bs-toggle="modal"
-              
-            >
+              data-bs-toggle="modal">
               <div
-                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100"
-              >
+                class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                 <div
-                  class="portfolio-item-caption-content text-center text-white"
-                >
+                  class="portfolio-item-caption-content text-center text-white">
                   <i class="fas fa-plus fa-3x"></i>
                 </div>
               </div>
               <img
                 class="img-fluid"
                 src="static/assets/img/6.png"
-                alt="image6"
-              />
+                alt="image6"/>
             </div>
           </div>
         </div>
-      </div>
     </section>
 
+{% endblock %}
 
-    <!-- About Section-->
-    <section class="page-section bg-primary text-white mb-0" id="about">
-      <div class="container">
-        <!-- About Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase text-white">
-          About
-        </h2>
-        <!-- Icon Divider-->
-        <div class="divider-custom divider-light">
-          <div class="divider-custom-line"></div>
-          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-          <div class="divider-custom-line"></div>
-        </div>
-        <!-- About Section Content-->
-        <div class="row">
-          <div class="col-lg-4 ms-auto">
-            <p class="lead">
-              BotSchedule is a scheduling software that helps businesses automate their workflows and increase efficiency. With BotSchedule, you can easily schedule tasks, automate reminders, and track progress all in one place.
-            </p>
-          </div>
-          <div class="col-lg-4 me-auto">
-            <p class="lead">
-              Our mission at BotSchedule is to help businesses streamline their workflows and increase productivity. We believe that by automating repetitive tasks, businesses can focus on what really matters - delivering value to their customers.
-            </p>
-          </div>
-        </div>
-    
-      </div>
-    </section>
     <!-- Copyright Section-->
-    <div class="copyright py-4 text-center text-white">
-      <div class="container">
-        <small>Copyright &copy; Your Website 2022</small>
-      </div>
+   <footer class="py-4 bg-dark mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Nomynameisjamees 2023</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            </div>
 
-    
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scriptsland.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
   </body>
+
 </html>
