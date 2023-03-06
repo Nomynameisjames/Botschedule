@@ -107,9 +107,20 @@ BotSchedule is highly customizable, allowing users to set up tasks to run exactl
 
 
 
+## Contributors
+
+* **Adava Onimisi** 
+    * **[Github] (https://github.com/Nomynameisjames)**
+    * **Linkdin www.linkedin.com/in/adava-onimisi-9bb5189a**
+    * **Email Adavaonimisi@gmail.com**
+    * **Twitter twitter.com/Pathoverdex**
 
 
-
+* **Kehinde Owolabi**
+    * **Github https://github.com/owolabi250**
+    * **Linkdin https://www.linkedin.com/in/owolabi-kehinde-37b448151/**
+    * **Email owolabikehinde250@gmail.com**
+    * **Twitter twitter.com/Elder_Choco**
 
 ## Contributing
 
