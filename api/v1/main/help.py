@@ -52,7 +52,7 @@ def quiz():
                 message = {}
                 message[Key] = data
                 with open('tasks.yaml', 'w') as f:
-                    yaml.dump(data, f)
+                    yaml.dump(message, f)
                 return jsonify(message), 200
             else:
                 return jsonify({"message": "Quiz data already present"}), 400

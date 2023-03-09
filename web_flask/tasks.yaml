@@ -724,3 +724,64 @@
 7: 8. What is the keyword used to return a value from an Async Function?
 8: 9. What is the keyword used to throw an error from an Async Function?
 9: 10. What is the keyword used to catch an error from an Async Function?
+0: 1. What is an async function?
+1: 2. What is the purpose of using async functions?
+2: 3. What is the syntax for declaring an async function?
+3: 4. What is the difference between an async function and a regular function?
+4: 5. What is the keyword used to pause an async function?
+5: 6. What is the keyword used to resume an async function?
+6: 7. What is the keyword used to return a value from an async function?
+7: 8. What is the keyword used to handle errors in an async function?
+8: 9. What is the keyword used to create a promise in an async function?
+9: 10. What is the keyword used to create a generator in an async function?
+0: 1. What is an Async Function?
+1: 2. What is the purpose of an Async Function?
+2: 3. What is the syntax for an Async Function?
+3: 4. What is the difference between an Async Function and a regular Function?
+4: 5. What is the keyword used to define an Async Function?
+5: 6. What is the keyword used to wait for an Async Function to finish?
+6: 7. What is the keyword used to handle errors in an Async Function?
+7: 8. How do you pass arguments to an Async Function?
+8: 9. What is the return value of an Async Function?
+9: 10. What is the difference between an Async Function and a Promise?
+0: Noun
+2: 1. What is a noun?
+3: 2. How many types of nouns are there?
+4: 3. What is a proper noun?
+5: 4. What is a common noun?
+6: 5. What is a collective noun?
+7: 6. What is a concrete noun?
+8: 7. What is an abstract noun?
+9: 8. What is a compound noun?
+10: 9. What is a possessive noun?
+11: 10. What is a gerund noun?
+0: 1. What is the purpose of the CSS float property?
+1: 2. What is the difference between an ID and a class in CSS?
+2: 3. What is the syntax for creating a CSS selector?
+3: 4. How do you create a hover effect in CSS?
+4: 5. What is the purpose of the CSS overflow property?
+5: 6. What is the difference between a div and a span in CSS?
+6: 7. How do you create a media query in CSS?
+7: 8. How do you set the font size of an element in CSS?
+8: 9. What is the purpose of the CSS position property?
+9: 10. How do you create a gradient background in CSS?
+0: 1. What is the purpose of the CSS box model?
+1: 2. What is the difference between a class and an ID in CSS?
+2: 3. What is the difference between a div and a span in CSS?
+3: 4. How do you center an element horizontally in CSS?
+4: 5. How do you set the font size of an element in CSS?
+5: 6. How do you set the background color of an element in CSS?
+6: 7. What is the difference between padding and margin in CSS?
+7: 8. How do you set the opacity of an element in CSS?
+8: 9. How do you set the border of an element in CSS?
+9: 10. How do you set the position of an element in CSS?
+0: 1. What is the purpose of the CSS box model?
+1: 2. What is the difference between an ID and a class in CSS?
+2: 3. What is the difference between a margin and a padding in CSS?
+3: 4. What is the purpose of the float property in CSS?
+4: 5. What is the purpose of the position property in CSS?
+5: 6. What is the difference between an inline and a block element in CSS?
+6: 7. What is the purpose of the z-index property in CSS?
+7: 8. What is the purpose of the display property in CSS?
+8: 9. What is the purpose of the overflow property in CSS?
+9: 10. What is the purpose of the visibility property in CSS?

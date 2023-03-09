@@ -1,10 +1,13 @@
-'False':
-  ' What is the difference between a pointer and a reference in C?8': hehehe
-  ' What is the difference between a pointer and a structure in C?9': hehehe
-  ' What is the difference between a pointer and an array in C?7': heheh
-  ' What is the purpose of the ''*'' operator in C?6': hey
-  ' What is the purpose of the ''->'' operator in C?10': heheheeheh
-  ' What is the purpose of the ''malloc': hehehe
-  ' What is the syntax for declaring a pointer in C?3': hey
-'True':
-  ' What is the purpose of the ''&'' operator in C?5': yse
+'4':
+  'False':
+    ' What is a collective noun?6': name
+    ' What is a concrete noun?7': noun
+    ' What is a gerund noun?': noun
+    ' What is a noun?2': ''
+    ' What is a proper noun?4': '3'
+    ' What is an abstract noun?8': noun
+  'True':
+    ' How many types of nouns are there?3': a name of person, animal, place or thing
+    ' What is a common noun?5': a good noun
+    ' What is a compound noun?9': noun
+    ' What is a possessive noun?10': noun
